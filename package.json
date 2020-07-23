@@ -1,0 +1,37 @@
+{
+  "name": "taskmanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "build": "electron-builder main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.1.1",
+    "electron-builder": "^22.7.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.19",
+    "popper.js": "^1.16.1",
+    "vue": "^2.6.11"
+  },
+  "build": {
+    "appId": "com.ebertm.son-electron-rememberme",
+    "productName": "Remember Me",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": null,
+    "win": {
+      "icon": "tray.png",
+      "target": "nsis"
+    }
+  }
+}

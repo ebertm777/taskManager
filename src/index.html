@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Remember Me</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-white">
+    <div id="app" class="d-flex flex-column container-fluid">
+        <div id="wrapper" class="row">
+            <div class="col-3 bg-secondary">
+                <p><span class="nav-link bg-dark text-secondary">Tarefas</span></p>
+
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a href="" class="nav-link bg-success text-white"
+                            @click.prevent="create()">Nova Tarefa</a></li>
+                    <li class="nav-item" v-for="note, index in notes">
+                        <a href="" class="nav-link text-white" @click.prevent="select(index)">{{ note.content }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <textarea @keyup="save()" ref="textarea"
+                    placeholder="Insira uma nova Tarefa...">{{ (active !== null) ? notes[active].content : '' }}</textarea>
+            </div>
+        </div>
+        <div id="footer" class="bg-info">
+            <strong>Dica: </strong> Apague o conteúdo da tarefa para deletar da lista de tarefas.
+        </div>
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/lodash/lodash.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
